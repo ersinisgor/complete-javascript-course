@@ -4,7 +4,7 @@ let country = "Turkey";
 let continent = "European continent";
 let population = 85.0e6;
 
-console.log(population);
+/* console.log(population); */
 
 /* Data Types */
 
@@ -26,4 +26,28 @@ let split = population / 2;
 split++;
 const finland = 6.0e6;
 const avaragePopulation = 33.0e6;
-/* console.log(population < avaragePopulation); */
+let description =
+  country +
+  " is in " +
+  continent +
+  " ,and it's " +
+  population +
+  " people speak " +
+  language;
+/* console.log(population < avaragePopulation);
+console.log(description); */
+
+/* Template Literals */
+description = `${country} is in ${continent}, and its ${population} people speak ${language}`;
+/* console.log(description); */
+
+/* Taking Decision */
+population = 13.0e6;
+if (population > 33.0e6) {
+  console.log(`${country}'s population is above avarage`);
+} else {
+  console.log(
+    `${country}'s population is ${33.0e6 - population} below avarage`
+  );
+}
+population = 85.0e6;
