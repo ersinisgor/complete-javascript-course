@@ -42,15 +42,15 @@ description = `${country} is in ${continent}, and its ${population} people speak
 /* console.log(description); */
 
 /* Taking Decision */
-population = 13.0e6;
+/* population = 13.0e6;
 if (population > 33.0e6) {
   console.log(`${country}'s population is above avarage`);
 } else {
-  /* console.log(
+   console.log(
     `${country}'s population is ${33.0e6 - population} below avarage`
-  ); */
+  ); 
 }
-population = 85.0e6;
+population = 85.0e6; */
 
 /* Type Conversion and Coercion */
 "9" - "5"; // 4
@@ -82,14 +82,14 @@ if (numNeighbours === 1) {
 }*/
 
 /* Logical Operator */
-if (language === "English" && population < 50.0e6 && isIsland) {
+/* if (language === "English" && population < 50.0e6 && isIsland) {
   console.log(`You should live in ${country}`);
 } else {
   console.log(`${country} doesn't meet your criteria`);
-}
+} */
 
 /* Switch Statement */
-switch (language.toLowerCase()) {
+/* switch (language.toLowerCase()) {
   case "chinese":
   case "mandarin":
     console.log("MOST number of native speakers!");
@@ -108,5 +108,9 @@ switch (language.toLowerCase()) {
     break;
   default:
     console.log("Great language too :D");
-    break;
-}
+} */
+
+/* Ternary Operator */
+population > 33.0e6
+  ? console.log(`${country}'s population is above avarage`)
+  : console.log(`${country}'s population is blowe avarage`);
