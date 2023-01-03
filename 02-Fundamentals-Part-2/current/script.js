@@ -46,10 +46,21 @@ const germany = persantageOfWorld3(83);
 console.log(turkey, portugal, germany); */
 
 /* Funcion in Other Function */
-const describePopulation = function (country, population) {
+/* const describePopulation = function (country, population) {
   const percentage = persantageOfWorld1(population);
   const description = `${country} has ${population} million people, which is about ${percentage}% of the world`;
   console.log(description);
 };
 
-describePopulation("Turkey", 86);
+describePopulation("Turkey", 86); */
+
+/* Introduction Array */
+
+const populations = [50, 622, 33, 86];
+const persantages = [
+  persantageOfWorld1(populations[0]),
+  persantageOfWorld1(populations[1]),
+  persantageOfWorld1(populations[2]),
+  persantageOfWorld1(populations[3]),
+];
+console.log(persantages);
