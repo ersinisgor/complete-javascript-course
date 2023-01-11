@@ -15,24 +15,29 @@ currentScore[0].textContent = value1;
 currentScore[1].textContent = value2;
 player1Score.textContent = score1;
 player2Score.textContent = score2;
+diceImage.style.display = 'none';
 
 const randomNumber = function () {
   const random = Math.trunc(Math.random() * 6) + 1;
   return random;
 };
 
-const switchPalyer = function () {
+const switchPlayer = function () {
   if (player[0].classList.contains('player--active')) {
     player[0].classList.remove('player--active');
     player[1].classList.add('player--active');
+    diceImage.style.display = 'none';
     currentScore[0].textContent = 0;
     currentScore[1].textContent = 0;
+    value1 = 0;
     //player1Score.textContent = 0;
   } else if (player[1].classList.contains('player--active')) {
     player[1].classList.remove('player--active');
     player[0].classList.add('player--active');
+    diceImage.style.display = 'none';
     currentScore[1].textContent = 0;
     currentScore[0].textContent = 0;
+    value2 = 0;
     //player2Score.textContent = 0;
   }
 };
@@ -44,18 +49,19 @@ const holdScore = function () {
     //player1Score.textContent = currentScore[0].textContent + value;
     score1 += Number(currentScore[0].textContent);
     player1Score.textContent = score1;
-    switchPalyer();
+    switchPlayer();
   } else if (player[1].classList.contains('player--active')) {
     //player2Score.textContent = currentScore[1].textContent + value;
     //value += currentScore[1].textContent;
     score2 += Number(currentScore[1].textContent);
     player2Score.textContent = score2;
-    switchPalyer();
+    switchPlayer();
   }
 };
 
 const playGame = function () {
   let dice = randomNumber();
+  diceImage.style.display = 'block';
   console.log(dice);
 
   switch (dice) {
@@ -82,17 +88,19 @@ const playGame = function () {
       break;
   }
 
-  if (dice === 1) {
-    switchPalyer();
-  } else {
-    if (player[0].classList.contains('player--active')) {
-      value1 += dice;
-      currentScore[0].textContent = value1;
-    } else if (player[1].classList.contains('player--active')) {
-      value2 += dice;
-      currentScore[1].textContent = value2;
+  setTimeout(function () {
+    if (dice === 1) {
+      switchPlayer();
+    } else {
+      if (player[0].classList.contains('player--active')) {
+        value1 += dice;
+        currentScore[0].textContent = value1;
+      } else if (player[1].classList.contains('player--active')) {
+        value2 += dice;
+        currentScore[1].textContent = value2;
+      }
     }
-  }
+  }, 500);
 };
 
 btnRoll.addEventListener('click', playGame);
