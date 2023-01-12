@@ -9,9 +9,10 @@
   </head>
   <body>
     <main>
-      <section class="player player--0 player--active">
+      <section class="player player--0">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">0</p>
+        <div class="winner"></div>
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--0">0</p>
@@ -20,14 +21,21 @@
       <section class="player player--1">
         <h2 class="name" id="name--1">Player 2</h2>
         <p class="score" id="score--1">0</p>
+        <div class="winner"></div>
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--1">0</p>
         </div>
       </section>
 
-      <img src="dice-1.png" alt="Playing dice" class="dice" />
-      <button class="btn btn--new">🔄 New game</button>
+      <img
+        src="dice-1.png"
+        alt="Playing dice"
+        class="dice"
+        style="display: none"
+      />
+      <div class="start"><span class="num"></span> will start</div>
+      <button class="btn btn--new">🔄 New Game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
     </main>

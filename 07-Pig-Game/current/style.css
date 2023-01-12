@@ -56,6 +56,17 @@ main {
   margin-bottom: 1rem;
 }
 
+.winner {
+  color: #fff;
+  position: relative;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+
 .score {
   font-size: 8rem;
   font-weight: 300;
@@ -151,10 +162,36 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 19rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.start {
+  align-items: center;
+  background-color: #2f2f2f;
+  border-radius: 50rem;
+  color: #ddd;
+  display: none;
+  font-size: 2.8rem;
+  height: 6rem;
+  justify-content: center;
+  left: 50%;
+  padding: 0.7rem 2.5rem;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  top: 26rem;
+  width: 38rem;
+  z-index: 10;
+}
+
+.num {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 0.8rem;
 }
 
 .player--winner {
