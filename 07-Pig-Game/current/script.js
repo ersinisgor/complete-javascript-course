@@ -1,5 +1,89 @@
 'use strict';
+const player1 = document.querySelector('.player--0');
+const player2 = document.querySelector('.player--1');
+const playerNumber = document.querySelector('.num');
+const startScreen = document.querySelector('.start');
 const btnRoll = document.querySelector('.btn--roll');
+const diceImage = document.querySelector('.dice');
+
+let currentScore = 0;
+let scores = [0, 0];
+let activePlayer = 0;
+let isThereWinner = false;
+
+const selectStartPlayer = function () {
+  const num = Math.trunc(Math.random() * 2) + 1;
+
+  if (num === 1) {
+    startScreen.style.display = 'flex';
+    playerNumber.textContent = `PLAYER ${num}`;
+    activePlayer = 0;
+    setTimeout(() => {
+      player1.classList.add('player--active');
+      //reset();
+    }, 700);
+    setTimeout(() => {
+      startScreen.style.display = 'none';
+    }, 1700);
+  } else if (num === 2) {
+    startScreen.style.display = 'flex';
+    playerNumber.textContent = `PLAYER ${num}`;
+    activePlayer = 1;
+    setTimeout(() => {
+      player2.classList.add('player--active');
+      //reset();
+    }, 700);
+    setTimeout(() => {
+      startScreen.style.display = 'none';
+    }, 1700);
+  }
+  console.log(num);
+};
+
+const randomNumber = function () {
+  const random = Math.trunc(Math.random() * 6) + 1;
+  return random;
+};
+
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player1.classList.toggle('player--active');
+  player2.classList.toggle('player--active');
+};
+
+const playGame = function () {
+  if (!isThereWinner) {
+    let dice = randomNumber();
+
+    //show dice on screen
+    diceImage.style.display = 'block';
+    diceImage.setAttribute('src', `dice-${dice}.png`);
+    setTimeout(() => {
+      diceImage.style.display = 'none';
+    }, 800);
+
+    // chech dice 1 rolled
+    if (dice !== 1) {
+      setTimeout(() => {
+        currentScore += dice;
+        document.getElementById(`current--${activePlayer}`).textContent =
+          currentScore;
+      }, 500);
+    } else {
+      setTimeout(() => {
+        switchPlayer();
+      }, 800);
+    }
+  }
+};
+
+setTimeout(selectStartPlayer, 1000);
+
+btnRoll.addEventListener('click', playGame);
+/* ------------------OLD SCRIPT------------------------- */
+/* const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const btnNew = document.querySelector('.btn--new');
 const playerNumber = document.querySelector('.num');
@@ -19,9 +103,9 @@ let value1 = 0;
 let value2 = 0;
 let score1 = 0;
 let score2 = 0;
-let isThereWinner = false;
+let isThereWinner = false; */
 
-const selectStartPlayer = function () {
+/* const selectStartPlayer = function () {
   const num = Math.trunc(Math.random() * 2) + 1;
 
   if (num === 1) {
@@ -47,9 +131,9 @@ const selectStartPlayer = function () {
       startScreen.style.display = 'none';
     }, 1700);
   }
-};
+}; */
 
-const reset = function () {
+/* const reset = function () {
   value1 = 0;
   value2 = 0;
   score1 = 0;
@@ -64,14 +148,14 @@ const reset = function () {
   winner[0].textContent = '';
   winner[1].textContent = '';
   isThereWinner = false;
-};
+}; */
 
-const randomNumber = function () {
+/* const randomNumber = function () {
   const random = Math.trunc(Math.random() * 6) + 1;
   return random;
-};
+}; */
 
-const switchPlayer = function () {
+/* const switchPlayer = function () {
   if (player1.contains('player--active')) {
     player1.remove('player--active');
     player2.add('player--active');
@@ -83,9 +167,9 @@ const switchPlayer = function () {
     value2 = 0;
     currentScore[1].textContent = value2;
   }
-};
+}; */
 
-const holdScore = function () {
+/* const holdScore = function () {
   if (player1.contains('player--active') && !isThereWinner) {
     score1 += value1;
     player1Score.textContent = score1;
@@ -109,9 +193,9 @@ const holdScore = function () {
       isThereWinner = true;
     }
   }
-};
+}; */
 
-const playGame = function () {
+/* const playGame = function () {
   if (!isThereWinner) {
     let dice = randomNumber();
 
@@ -179,13 +263,13 @@ const playGame = function () {
       }, 500);
     }
   }
-};
+}; */
 
-setTimeout(selectStartPlayer, 1000);
+/* setTimeout(selectStartPlayer, 1000);
 
 btnRoll.addEventListener('click', playGame);
 btnHold.addEventListener('click', holdScore);
 btnNew.addEventListener('click', () => {
   reset();
   setTimeout(selectStartPlayer, 1000);
-});
+}); */
