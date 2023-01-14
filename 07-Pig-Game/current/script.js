@@ -55,15 +55,13 @@ const switchPlayer = function () {
 };
 
 const holdScore = function () {
-  console.log(activePlayer);
-  let playerScore = document.getElementById(
-    `score--${activePlayer}`
-  ).textContent;
-  console.log(playerScore);
-  console.log(currentScore);
   if (!isThereWinner) {
     scores[activePlayer] += currentScore;
-    playerScore = scores[activePlayer];
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    let playerScore = document.getElementById(
+      `score--${activePlayer}`
+    ).textContent;
     if (playerScore < 6) {
       currentScore = 0;
       switchPlayer();
