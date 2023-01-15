@@ -14,15 +14,23 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 103vh;
   color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* LAYOUT */
+.container {
+  /* margin: auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
 main {
   position: relative;
   width: 100rem;
@@ -201,4 +209,188 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
+}
+
+/*----FOOTER----*/
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: #ddd;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: auto;
+  /* height: 30px; */
+}
+
+.fa-github {
+  color: #ddd;
+  font-size: 1.35rem;
+}
+
+.fa-github:hover {
+  animation: github-animation 0.5s ease infinite alternate;
+}
+
+i {
+  font-size: 13px;
+}
+
+@keyframes github-animation {
+  from {
+    transform: translateY(0rem) scale(1.2);
+  }
+  to {
+    transform: translateY(-0.3rem) scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 60rem;
+    height: 42rem;
+  }
+
+  .player {
+    padding: 4rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 5rem;
+  }
+
+  .winner {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .current {
+    padding: 1rem;
+    width: 55%;
+  }
+
+  .current-score {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .btn::first-letter {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+  }
+
+  .btn--new {
+    top: 1.5rem;
+  }
+  .btn--roll {
+    top: 28.5rem;
+  }
+  .btn--hold {
+    top: 34.5rem;
+  }
+
+  .dice {
+    top: 10rem;
+    height: 6rem;
+  }
+
+  .start {
+    font-size: 2rem;
+    height: 3rem;
+    padding: 0.5rem 2rem;
+    top: 30rem;
+    width: 24rem;
+    z-index: 10;
+  }
+
+  .num {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 568px) {
+  main {
+    width: 40rem;
+    height: 24rem;
+  }
+
+  .player {
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+
+  .winner {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .current {
+    padding: 0.5rem;
+    width: 45%;
+  }
+
+  .current-label {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .current-score {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .btn::first-letter {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+  }
+
+  .btn--new {
+    top: 4rem;
+  }
+  .btn--roll {
+    top: 17rem;
+  }
+  .btn--hold {
+    top: 20.5rem;
+  }
+
+  .dice {
+    top: 10rem;
+    height: 4rem;
+  }
+
+  .start {
+    font-size: 1rem;
+    height: 2rem;
+    padding: 0.3rem 1rem;
+    top: 10rem;
+    width: 16rem;
+    z-index: 10;
+  }
+
+  .num {
+    margin-right: 0.4rem;
+  }
 }
