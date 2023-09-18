@@ -104,7 +104,7 @@ const playGame = function () {
 
     //show dice on screen
     diceImage.style.display = 'block';
-    diceImage.setAttribute('src', `dice-${dice}.png`);
+    diceImage.setAttribute('src', `img/dice-${dice}.png`);
     setTimeout(() => {
       diceImage.style.display = 'none';
     }, 800);

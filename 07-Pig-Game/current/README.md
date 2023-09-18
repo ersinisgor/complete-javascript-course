@@ -8,7 +8,7 @@ Pig Game is a two-player game where the computer randomly selects the starting p
 
 You can see a live demo of the project 👉 [https://pig-game-er.netlify.app/](https://pig-game-er.netlify.app/)
 
-![Demo GIF](https://github.com/ersinisgor/complete-javascript-course/tree/main/07-Pig-Game/current/img/gif/Pig%20Game.gif)
+![Demo GIF](https://github.com/ersinisgor/complete-javascript-course/blob/main/07-Pig-Game/current/img/gif/Pig%20Game.gif)
 
 ## How to Play
 
